@@ -40,7 +40,7 @@ app.use(cookieParser());
 // Custom routes
 app.use('/auth', authRoute);
 app.use('/post', postRoute);
-app.use('/user', userRoute);
+app.use('/user', userRoute)
 
 app.listen(process.env.PORT, () => {
     console.log(`PORT CONNECTED ON ${process.env.PORT}`);
