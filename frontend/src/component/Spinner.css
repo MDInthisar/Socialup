@@ -1,0 +1,54 @@
+/* Spinner.css */
+
+/* Dark blurred overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    backdrop-filter: blur(10px); /* Blur effect on the background */
+    z-index: 9999; /* Ensure the overlay is on top */
+  }
+  
+  /* Spinner styling */
+  .spinner {
+    border: 10px solid rgba(255, 255, 255, 0.1); /* Light gray border */
+    border-top: 10px solid #3498db; /* Blue color for the top part */
+    border-radius: 50%;
+    width: 80px; /* Width of the spinner */
+    height: 80px; /* Height of the spinner */
+    animation: spin 1.5s linear infinite, pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 50px rgba(52, 152, 219, 0.6); /* Glowing effect */
+  }
+  
+  /* Keyframe animation for spinning */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Keyframe animation for pulsing effect */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  

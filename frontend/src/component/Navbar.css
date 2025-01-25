@@ -1,0 +1,110 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: Arial, sans-serif; /* Match the font family */
+  }
+  
+  .logo-section {
+    flex: 1;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    flex: 2;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #4e90ff;
+  }
+  
+  .search-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .search-input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .auth-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .login-btn {
+    padding: 8px 15px;
+    background-color: #4e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #3578e5;
+  }
+  
+  .signup-btn {
+    padding: 8px 15px;
+    background-color: white;
+    color: #4e90ff;
+    border: 1px solid #4e90ff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-btn:hover {
+    background-color: #4e90ff;
+    color: white;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  
+    .auth-section {
+      margin-top: 10px;
+      justify-content: center;
+    }
+  }
+  

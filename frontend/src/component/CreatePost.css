@@ -1,0 +1,146 @@
+/* Container that holds everything */
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+  }
+  
+  /* Create Post Box */
+  .createpost {
+    width: 30vw;
+    min-height: 30vw;
+    border-radius: 1.2vw;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Profile and Share section */
+  .createpost .prode {
+    width: 100%;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    gap: 2vw;
+    position: relative;
+  }
+  
+  /* Profile Image Section */
+  .prode .proimg {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Profile image itself */
+  .prode .proimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Username */
+  .prode h2 {
+    margin: 0;
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Share button */
+  .prode h2:last-child {
+    position: absolute;
+    right: 10px;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    color: #4e90ff;
+  }
+  
+  /* Image preview section */
+  .previewimg {
+    width: 100%;
+    height: 16vw;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  /* Preview Image */
+  .previewimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Input for file upload */
+  .createpost input[type="file"] {
+    margin-top: 2vw;
+    width: 100%;
+    padding: 0.5vw;
+    font-size: 1vw;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Caption Textarea */
+  .createpost textarea {
+    width: 100%;
+    height: 8vw;
+    margin-top: 2vw;
+    padding: 1vw;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1vw;
+    resize: none;
+    outline: none;
+  }
+  
+  /* Textarea focus style */
+  .createpost textarea:focus {
+    border-color: #4e90ff;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media screen and (max-width: 768px) {
+    .createpost {
+      width: 90vw;
+      min-height: 50vw;
+    }
+  
+    .prode h2 {
+      font-size: 4vw;
+    }
+  
+    .prode .proimg {
+      width: 10vw;
+      height: 10vw;
+    }
+  
+    .previewimg {
+      height: 40vw;
+    }
+  
+    .createpost input[type="file"],
+    .createpost textarea {
+      font-size: 4vw;
+    }
+  }
+  

@@ -1,0 +1,98 @@
+.logcontainer {
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px); /* Background blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    animation: fadeIn 0.5s ease-in-out;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .logmodel {
+    width: 30vw;
+    height: 25vw;
+    border-radius: 1vw;
+    background: rgba(255, 1, 1, 0.4); /* Semi-transparent black background for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border to enhance glass effect */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Soft shadow for depth */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vw;
+    padding: 2vw;
+    animation: slideDown 0.6s ease;
+  }
+  
+  .logmodel h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2vw;
+    color: #fff; /* White text for contrast */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); /* Soft text shadow for readability */
+  }
+  
+  .logmodel p {
+    font-size: 1.2vw;
+    color: #ccc; /* Light gray text for better readability */
+  }
+  
+  .btn {
+    display: flex;
+    gap: 1.5vw;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.8vw 2vw;
+    font-size: 1.2vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-primary {
+    background-color: crimson; /* Slightly transparent red */
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(255, 0, 51);
+    transform: scale(1.05);
+  }
+  
+  .btn-secondary {
+    background-color: rgba(221, 221, 221, 0.8);
+    color: #333;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(187, 187, 187, 0.8);
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  

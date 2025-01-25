@@ -1,0 +1,75 @@
+/* Container for the list of suggestion cards */
+.suggestion-list {
+    display: flex;
+    flex-wrap: wrap;   /* Ensures the cards will wrap to the next line */
+    gap: 20px;         /* Adds space between the cards */
+    margin-top: 2vw;
+    justify-content: center;  /* Aligns cards to the left */
+  }
+  
+  /* Each suggestion card */
+  .suggestion-card {
+    display: flex
+    ;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 10vw;
+        padding: 1vw;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #fff;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    margin-bottom: 1vw;
+  }
+  
+  .username {
+    font-weight: 600;
+    font-size: 1.5vw;
+    margin-bottom: 5px;
+  }
+  
+  .user-info .bio {
+    font-size: 1vw;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 700;
+    font-family: sans-serif;
+  }
+  
+  .follow-btn {
+    background-color: #0095f6;
+    color: white;
+    padding: 1vw 1.5vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+  }
+  
+  .follow-btn:hover {
+    background-color: #007bb5;
+  }
+  
+  .follow-btn svg {
+    margin-right: 5px;
+  }
+  
