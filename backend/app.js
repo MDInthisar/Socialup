@@ -15,7 +15,7 @@ const app = express();
 
 dotenv.config();
 app.use(cors({
-    origin: 'http://localhost:5173', // Only allow this origin (React frontend)
+    origin: process.env.FRONTEND_URL, // Only allow this origin (React frontend)
     credentials: true, // Allow credentials (cookies)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly list allowed HTTP methods
 }));
