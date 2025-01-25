@@ -46,6 +46,8 @@ const Signup = () => {
 
     const userData = { fullname, username, email, password };
     try {
+      console.log(import.meta.env.VITE_BACKEND_CONNECTION);
+      
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_CONNECTION}/auth/signup`,
         userData

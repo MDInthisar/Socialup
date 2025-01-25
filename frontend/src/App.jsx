@@ -22,6 +22,7 @@ const App = () => {
 
   // set profile image
   const [profileImage, setprofileImage] = useState("");
+
   return (
     <>
       <BrowserRouter>

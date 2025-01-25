@@ -30,7 +30,7 @@ export const myposts = async (req, res) => {
     .find({ postedBy: req.user.userID })
     .populate("postedBy");
   res.json({user, post});
-};
+}; 
 
 export const likeandunlikepost = async (req, res) => {
   const post = await postModel.findOne({ _id: req.body.postID });

@@ -11,11 +11,14 @@ import userRoute from './routes/userRoute.js';
 // mongoDB connection
 import mongoConnect from "./config/mongooseConnection.js";
 
+dotenv.config();
+
 const app = express();
 
-dotenv.config();
+console.log(process.env.FRONTEND_URL);
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // Only allow this origin (React frontend)
+    origin:  'http://localhost:5173', // Only allow this origin (React frontend)
     credentials: true, // Allow credentials (cookies)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly list allowed HTTP methods
 }));
@@ -28,7 +31,6 @@ app.use((req, res, next) => {
 });
 
 // MongoDB connection
-mongoConnect();
 
 // Body parsing middleware
 app.use(express.json());
@@ -42,6 +44,7 @@ app.use('/auth', authRoute);
 app.use('/post', postRoute);
 app.use('/user', userRoute)
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 5001, async () => {
     console.log(`PORT CONNECTED ON ${process.env.PORT}`);
+    await mongoConnect();
 });
