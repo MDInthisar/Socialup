@@ -25,7 +25,7 @@ const Profile = () => {
       setmyposts(response.data.post);
     };
     myposts();
-  }, []);
+  }, [<EditProfile/>]);
 
   const changeProfile = () => {
     setchangeProfilePic((prev) => !prev); // Toggle the modal

@@ -34,7 +34,7 @@ const Home = () => {
       setisLoading(false);
     };
     allposts();
-  }, []);
+  }, [<Home/>]);
 
   const togglecomment = (post) => {
     if (commentShow) {
@@ -93,7 +93,7 @@ const Home = () => {
         }
       });
       setshowItem(updatedPosts);
-
+      setshowItem(true)
       setcomment("");
     }
   };

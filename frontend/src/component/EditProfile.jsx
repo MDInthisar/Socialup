@@ -13,7 +13,7 @@ const EditProfile = ({setEdit}) => {
   const handleEdit = async (e)=>{
     e.preventDefault()
 
-    if(bio.length<3 || username.length<2) return notifyerror('minimum 3 charecters needed');
+    // if(bio.length<3 || username.length<2) return notifyerror('minimum 3 charecters needed');
 
     const response = await axios.put(`${import.meta.env.VITE_BACKEND_CONNECTION}/user/editprofile`, {username,bio}, {withCredentials:true}); 
     

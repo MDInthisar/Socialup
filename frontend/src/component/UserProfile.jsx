@@ -33,7 +33,7 @@ const UserProfile = () => {
     };
     
     userPosts();
-  },[]);
+  },[<UserProfile/>]);
 
   // follow unfollow API
   const followUnfollow = async (userID) => {

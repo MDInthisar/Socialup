@@ -23,7 +23,7 @@ const CreatePost = () => {
             notifyerror('please login')
             navigate('/login')
         }
-    }, [])
+    }, [<CreatePost/>])
 
   const loadfile = (e) => {
     let output = document.getElementById("output");

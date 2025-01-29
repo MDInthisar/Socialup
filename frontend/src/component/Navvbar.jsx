@@ -9,6 +9,8 @@ const Navbar = ({ checklogin }) => {
 
   const shownav = () => {
     const token = localStorage.getItem("token");
+    console.log(checklogin);
+    
     if (checklogin || token) {
       return (
         <>

@@ -15,20 +15,24 @@ dotenv.config();
 
 const app = express();
 
-console.log(process.env.FRONTEND_URL)
+console.log(process.env.FRONTEND_URL);
+
+
 
 app.use(cors({
-    origin:  process.env.FRONTEND_URL, // Only allow this origin (React frontend)
+    origin: 'http://localhost:5173', // **Removed trailing slash**
     credentials: true, // Allow credentials (cookies)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly list allowed HTTP methods
 }));
 
+
+
 // Middleware to add COOP and COEP headers
-// app.use((req, res, next) => {
-//     res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-//     res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-//     next();
-// });
+app.use((req, res, next) => {
+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+    next();
+});
 
 // MongoDB connection
 
@@ -44,7 +48,7 @@ app.use('/auth', authRoute);
 app.use('/post', postRoute);
 app.use('/user', userRoute)
 
-app.listen(process.env.PORT || 5001, async () => {
+app.listen(process.env.PORT || 5001,  () => {
     console.log(`PORT CONNECTED ON ${process.env.PORT}`);
-    await mongoConnect();
+    mongoConnect();
 });

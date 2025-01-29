@@ -79,10 +79,14 @@ export const editprofile = async (req, res) => {
 
   if (existusername)
     return res.json({ error: "this username already taken" });  
-  
-  const editeduser = await userModel.findByIdAndUpdate({ _id: req.user.userID }, { username, bio }).select('-password');
 
-  res.json({ message: "Profile update successful", editeduser });
+  user.username = username || user.username;
+  user.bio = bio || user.bio;
+  const edituser = await user.save();
+
+  // const editeduser = await userModel.findByIdAndUpdate({ _id: req.user.userID }, { username, bio }).select('-password');
+
+  res.json({ message: "Profile update successful", edituser });
 };
 
 export const suggestion = async (req, res)=>{

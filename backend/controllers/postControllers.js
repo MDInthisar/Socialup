@@ -1,3 +1,4 @@
+import { populate } from "dotenv";
 import postModel from "../models/postModel.js";
 import userModel from "../models/userModel.js";
 
@@ -68,12 +69,13 @@ export const commentandUncomment = async (req, res) => {
   
     // Find the post by postID
     const post = await postModel.findOne({ _id: postID });
+    const user = await userModel.findOne({_id: req.user.userID}).select('-password');
   
     if (!post) return res.json({ error: "post not found" });
 
     const commentData = {
         comment,
-        commentedBy: req.user.userID
+        commentedBy: user
     }
 
     // Add the comment and commentedBy field
@@ -85,8 +87,11 @@ export const commentandUncomment = async (req, res) => {
         },
         { new: true }
       )
-      .populate('comments.commentedBy');  // Populate the commentedBy field of the comments array
-  
+      .populate({
+        path: 'comments.commentedBy',  // Populate `commentedBy` field inside each comment object
+        select: 'username'  // Optionally, select specific fields to populate from the `commentedBy` model
+      }); // Populate the commentedBy field of the comments array
+      
     // Return the updated post with populated user data in comments
     res.json(result);
   };
